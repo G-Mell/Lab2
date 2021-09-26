@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="myPet"
+      class="com.gmell.springlabone.Pet"
+      init-method="init"
+      destroy-method="destroy"
+>
+</bean>
+    <bean id="myCar"
+          class="com.gmell.springlabone.Car"
+        init-method="init"
+        destroy-method="destroy"
+    >
+    </bean>
+    <bean id="myEmployee"
+          class="com.gmell.springlabone.Employee"
+          init-method="init"
+          destroy-method="destroy"
+    >
+        <property name="pet" ref="myPet"/>
+        <property name="car" ref="myCar"/>
+
+    </bean>
+
+
+</beans>
